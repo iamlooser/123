@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %} Zest | SignIn {% endblock %}
+
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+
+{% endblock %}
+{% block body %}
+  <section class="sign-in">
+    <div class="sign-in-overlay">
+      <div class="sign-in-container">
+        <div class="sign">
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-md-12">
+                <img src="{% static 'images/logo.png' %}" class="logo" alt="Logo">
+                <div class="account">
+                  <div class="account-title">
+                    <h2>  {% block account_title %}  {% endblock %} </h2>
+                  </div>
+                </div>
+          {% block page_data %}
+
+        {% endblock %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+{% endblock %}
+{% block script %}
+  {% if msg != None %}
+    <script type="text/javascript">
+      alert("{{ msg }}");
+    </script>
+  {% endif %}
+{% endblock %}

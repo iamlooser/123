@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+{% load static  %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> {% block title %} Zest 2K19 {% endblock %} </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Ubuntu|Roboto+Slab:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style media="screen">
+    .header{
+      background-image: url("{% static 'images/header_bg.jpg' %}");
+    }
+    .carousel-item-01{
+      background-image: url("{% static 'images/header_bg.jpg' %}");
+    }
+    .carousel-item-02{
+      background-image: url("{% static 'images/bg.jpeg' %}");
+    }
+    .carousel-item-03{
+      background-image: url("{% static 'images/123.png' %}");
+    }
+
+    </style>
+{% block style %}{% endblock %}
+  </head>
+  <body>
+
+    <main>
+      <div class="NavBar">
+        <nav>
+          <div class="menu-icon">
+            <i class="fas fa-align-justify"></i>
+          </div>
+          <div class="nav-logo">
+            <img src="{% static 'images/logo_lv.png' %}" width="70px;" alt="">
+          </div>
+          <div class="menu">
+            <ul>
+              <li> <a class="active" href="{% url 'home' %}">Home</a> </li>
+              <li> <a class="" href="#">Events</a> </li>
+              <li> <a class="" href="#">Commitees</a> </li>
+              <li> <a class="" href="#">Contact</a> </li>
+              <li> <a class="" href="#">About</a> </li>
+
+            {% if user_id != None %}
+            <li> <a class="" href="#">Logined_link</a> </li>
+            <li> <a class="" href="{% url 'profile' %}">{{ user_name }}</a> </li>
+            <li> <a class="" href="{% url 'logout' %}">LogOut</a> </li>
+            {% else %}
+
+              <li> <a class="" href="{% url 'sign_in' %}">Sign</a> </li>
+            {% endif %}
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+{% block body %}
+
+
+{% endblock %}
+
+{% include 'project/footer.html' %}
+    </main>
+    <!-- Jquery JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    {% block script %}{% endblock %}
+  </body>
+</html>

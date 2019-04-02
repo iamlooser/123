@@ -1,0 +1,23 @@
+{% extends 'project/sign_in.html' %}
+
+{% block title %} Zest | {{ user_name }} {% endblock %}
+{% block account_title %} {{ user_name }}
+Profile {% endblock %}
+
+{% block page_data %}
+<div class="justify-content-center profile">
+  {% for key, value in user.items %}
+    <div class="profile-items">
+      {% if key == 'status' %}
+      {% else %}
+      <div>
+        {{ key }}
+      </div>
+      <div>
+        {{ value }}
+      </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

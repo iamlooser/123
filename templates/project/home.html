@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    <div class="container-fluid carousel-container">
+      <div id="carouselZestHeader" class="carousel slide carousel-outer" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselZestHeader" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselZestHeader" data-slide-to="1"></li>
+          <li data-target="#carouselZestHeader" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item carousel-item-01 active">
+            <div class="carousel-item-overlay">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h1 style="color: white;margin-top:100px ">
+                      {% for key, value in user.items %}
+                      {{key}} : {{value}} <br>
+                      {% endfor %}
+                      </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item carousel-item-02">
+            <div class="carousel-item-overlay">
+
+            </div>
+          </div>
+          <div class="carousel-item carousel-item-03">
+            <div class="carousel-item-overlay">
+
+            </div>
+          </div>
+        </div>
+        <!--a class="carousel-control-prev" href="#carouselZestHeader" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselZestHeader" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a-->
+      </div>
+    </div>
+
+    <section>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="{% static 'images/123.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+
+
+    <header class="header">
+      <div class="header-overlay">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-md-4" style="border: 3px solid red;margin: 10px;">
+              <h2>Chandu Mani Kumar</h2>
+            </div>
+            <div class="col-md-3" style="border: 3px solid red;margin: 10px; ">
+
+            </div>
+            <div class="col-md-3" style="border: 3px solid red;margin: 10px; ">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="">
+
+    </section>
+{% endblock %}

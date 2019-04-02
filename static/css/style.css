@@ -1,0 +1,188 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Titillium Web', sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  display: block;
+}
+h2{
+  font-family: 'Roboto Slab', serif;
+}
+{% load static %}
+/* ============== carousel Header Slider ============ */
+.carousel-container{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+.carousel-inner{
+  height: 100vh;
+}
+.carousel-item{
+  text-align: center;
+  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  -webkit-background-size:cover;
+}
+
+.carousel-item-01{
+  background-image: url("{% static 'images/header_bg.jpg' %}");
+}
+.carousel-item-02{
+  background-image: url("{% static 'images/bg.jpeg' %}");
+}
+.carousel-item-03{
+  background-image: url("{% static 'images/123.png' %}");
+}
+.carousel-item-overlay{
+  height: 100vh;
+  background-color: rgba(7, 11, 111, 0.47)
+}
+
+/* ==========NavBar=============== */
+
+
+.nav-logo{
+  position: fixed;
+  float: left;
+  margin: 10px;
+}
+nav{
+  color: white;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+nav ul{
+  list-style: none;
+  overflow: hidden;
+  background-color: rgba(111, 0, 113, 0.61);
+  color: rgb(255, 255, 255);
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  transition: 1s;
+}
+nav.black ul{
+    background-color: rgba(111, 0, 113, 0.61);
+}
+nav ul li{
+  display: inline-block;
+  padding: 20px;
+}
+nav ul li a{
+  position: relative;
+  text-decoration: none;
+  color: white;
+  line-height: 35px;
+  padding: 5px;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+nav ul li a::before{
+  transform-origin: left;
+  top: 0;
+}
+nav ul li a::after{
+  transform-origin: right;
+  bottom: 0;
+}
+nav ul li a:hover{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+}
+nav ul li a::after,
+nav ul li a::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background: rgb(244, 93, 141);
+  transform: scaleX(0);
+  transition: all .5s
+}
+nav ul li a:hover::after,
+nav ul li a:hover::before{
+    transform: scaleX(1);
+}
+.active {
+  font-weight: 800;
+}
+.menu-icon{
+  z-index: 1;
+  width: 100%;
+  background: rgba(111, 0, 113, 0.61);
+  text-align: right;
+  box-sizing: border-box;
+  padding: 15px 24px;
+  font-size: 24px;
+  cursor: pointer;
+  color:#fff;
+  display: none;
+}
+
+@media(max-width : 1050px) {
+  .nav-logo{
+    position: fixed;
+    top: 0;
+    margin-top: 10px;
+  }
+  nav ul {
+    max-height: 0;
+    background: rgba(111, 0, 113, 0.61);
+  }
+  .showing {
+    max-height: 50em;
+  }
+  nav ul li{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px 0;
+    text-align: center;
+  }
+  .menu-icon{
+    display: block;
+  }
+}
+
+
+/* ==============Header============ */
+.header{
+  text-align: center;
+  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  -webkit-background-size:cover;
+}
+.header-overlay{
+  height: 100vh;
+  background-color: rgba(7, 11, 111, 0.47)
+}
+.navbar-bg{
+  background: transparent;
+}
+.nav-ul{
+  text-align: right;
+}
+.container{
+}
+
+
+/* ============ Sign Page ==================== */

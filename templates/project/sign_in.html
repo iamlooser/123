@@ -1,0 +1,17 @@
+{% extends 'project/sign.html' %}
+{% load static %}
+
+{% block title %} Zest | SignIn {% endblock %}
+
+{% block account_title %} My Account {% endblock %}
+
+{% block page_data %}
+      <form class="sign-form" method="post" action="/signed-in/">
+        {% csrf_token %}
+        <input type="email" name="email" value="" placeholder="email@gmail.com"><br>
+        <input type="password" name="password" value="" placeholder="password"><br>
+        <a href="{% url 'reset_password' %}">forgot passowrd</a><br>
+        <button type="submit" name="button">Sign In</button><br>
+        <a href="{% url 'sign_up' %}">create account</a><br>
+      </form>
+{% endblock %}
